@@ -11,7 +11,7 @@ export default defineEndpoint({
             "Ambiguous retains the delegated key and returns an owned connection ID. Supply a new request_id UUID for this intent and reuse it on retries. A reused ID with different inputs fails. Check human.claim_token_sent for claim-email delivery.",
     },
     endpoint: "/connections/create",
-    request: { method: "POST", path: "/api/provider-connections/create" },
+    request: { method: "POST", path: "/api/monid/connections/create" },
     input: {
         schema: {
             body: signupInput.omit({ browser_session: true }).extend({

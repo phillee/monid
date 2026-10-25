@@ -10,7 +10,7 @@ export default defineEndpoint({
             "Ambiguous retains the delegated key and returns an owned connection ID. Supply a new request_id UUID for this intent and reuse it on retries. A reused ID with different inputs fails. An expired or consumed code fails without creating a workspace.",
     },
     endpoint: "/connections/connect",
-    request: { method: "POST", path: "/api/provider-connections/connect" },
+    request: { method: "POST", path: "/api/monid/connections/connect" },
     input: {
         schema: {
             body: z.object({

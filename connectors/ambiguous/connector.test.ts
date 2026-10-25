@@ -4,7 +4,7 @@ import { testBundle, testResourceUnit, testSealedUnit } from "@shared/testing";
 import type { Json, OwnedResource, RunInput } from "@shared/core";
 import { catalog, coverage } from "./catalog.ts";
 
-const PROVIDER_KEY = "ak_synthetic_provider";
+const PROVIDER_KEY = "mon_synthetic_provider";
 const ID_A = "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa";
 const ID_B = "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb";
 const CODE = "ahc_" + "s".repeat(43);
@@ -147,7 +147,7 @@ Deno.test("ambiguous: every MCP operation compiles on engine 0.5 with its comple
         assertEquals(
             doc.request.url,
             ORIGIN +
-                "/api/provider-connections/{monid_connection}/operations/" +
+                "/api/monid/connections/{monid_connection}/operations/" +
                 operation.operationId,
         );
         assertEquals(

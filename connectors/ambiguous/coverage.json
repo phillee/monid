@@ -1,6 +1,6 @@
 {
-  "totalOperations": 1601,
-  "includedOperations": 964,
+  "totalOperations": 1611,
+  "includedOperations": 968,
   "notExposedToMcp": [
     {
       "operationId": "acknowledge_onboarding_agent",
@@ -1876,6 +1876,13 @@
       "reason": "Not exposed to MCP by the public API contract"
     },
     {
+      "operationId": "get_canvas_thumbnail",
+      "method": "GET",
+      "path": "/api/canvas/{id}/thumbnail",
+      "expose": [],
+      "reason": "Not exposed to MCP by the public API contract"
+    },
+    {
       "operationId": "get_cli",
       "method": "GET",
       "path": "/api/auth/cli",
@@ -2048,6 +2055,20 @@
       "reason": "Not exposed to MCP by the public API contract"
     },
     {
+      "operationId": "integration_github_install_consume",
+      "method": "POST",
+      "path": "/api/integrations/github/install",
+      "expose": [],
+      "reason": "Not exposed to MCP by the public API contract"
+    },
+    {
+      "operationId": "integration_github_install_handoff",
+      "method": "POST",
+      "path": "/api/integrations/github/install-handoff",
+      "expose": [],
+      "reason": "Not exposed to MCP by the public API contract"
+    },
+    {
       "operationId": "integration_slack_callback",
       "method": "GET",
       "path": "/api/integrations/slack/callback",
@@ -2058,6 +2079,20 @@
       "operationId": "integration_slack_install",
       "method": "GET",
       "path": "/api/integrations/slack/install",
+      "expose": [],
+      "reason": "Not exposed to MCP by the public API contract"
+    },
+    {
+      "operationId": "integration_slack_install_consume",
+      "method": "POST",
+      "path": "/api/integrations/slack/install",
+      "expose": [],
+      "reason": "Not exposed to MCP by the public API contract"
+    },
+    {
+      "operationId": "integration_slack_install_handoff",
+      "method": "POST",
+      "path": "/api/integrations/slack/install-handoff",
       "expose": [],
       "reason": "Not exposed to MCP by the public API contract"
     },
@@ -2496,6 +2531,41 @@
       "reason": "Not exposed to MCP by the public API contract"
     },
     {
+      "operationId": "monid_connection_connect",
+      "method": "POST",
+      "path": "/api/monid/connections/connect",
+      "expose": [],
+      "reason": "Not exposed to MCP by the public API contract"
+    },
+    {
+      "operationId": "monid_connection_create",
+      "method": "POST",
+      "path": "/api/monid/connections/create",
+      "expose": [],
+      "reason": "Not exposed to MCP by the public API contract"
+    },
+    {
+      "operationId": "monid_connection_disconnect",
+      "method": "DELETE",
+      "path": "/api/monid/connections/{connectionId}",
+      "expose": [],
+      "reason": "Not exposed to MCP by the public API contract"
+    },
+    {
+      "operationId": "monid_connection_execute",
+      "method": "POST",
+      "path": "/api/monid/connections/{connectionId}/operations/{operationId}",
+      "expose": [],
+      "reason": "Not exposed to MCP by the public API contract"
+    },
+    {
+      "operationId": "monid_connection_get",
+      "method": "GET",
+      "path": "/api/monid/connections/{connectionId}",
+      "expose": [],
+      "reason": "Not exposed to MCP by the public API contract"
+    },
+    {
       "operationId": "oauth_authorization_server_metadata",
       "method": "GET",
       "path": "/.well-known/oauth-authorization-server",
@@ -2852,41 +2922,6 @@
       "expose": [
         "assistant"
       ],
-      "reason": "Not exposed to MCP by the public API contract"
-    },
-    {
-      "operationId": "provider_connection_connect",
-      "method": "POST",
-      "path": "/api/provider-connections/connect",
-      "expose": [],
-      "reason": "Not exposed to MCP by the public API contract"
-    },
-    {
-      "operationId": "provider_connection_create",
-      "method": "POST",
-      "path": "/api/provider-connections/create",
-      "expose": [],
-      "reason": "Not exposed to MCP by the public API contract"
-    },
-    {
-      "operationId": "provider_connection_disconnect",
-      "method": "DELETE",
-      "path": "/api/provider-connections/{connectionId}",
-      "expose": [],
-      "reason": "Not exposed to MCP by the public API contract"
-    },
-    {
-      "operationId": "provider_connection_execute",
-      "method": "POST",
-      "path": "/api/provider-connections/{connectionId}/operations/{operationId}",
-      "expose": [],
-      "reason": "Not exposed to MCP by the public API contract"
-    },
-    {
-      "operationId": "provider_connection_get",
-      "method": "GET",
-      "path": "/api/provider-connections/{connectionId}",
-      "expose": [],
       "reason": "Not exposed to MCP by the public API contract"
     },
     {
@@ -3395,6 +3430,13 @@
       "operationId": "sign_void_document",
       "method": "POST",
       "path": "/api/sign/{id}/void",
+      "expose": [],
+      "reason": "Not exposed to MCP by the public API contract"
+    },
+    {
+      "operationId": "start_billing_trial",
+      "method": "POST",
+      "path": "/api/billing/trial",
       "expose": [],
       "reason": "Not exposed to MCP by the public API contract"
     },

@@ -259,7 +259,7 @@ export function apiEndpoint(operationId: string) {
         request: {
             method: "POST",
             path:
-                `/api/provider-connections/{monid_connection}/operations/${operationId}`,
+                `/api/monid/connections/{monid_connection}/operations/${operationId}`,
         },
         input: {
             schema: {

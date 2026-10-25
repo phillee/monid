@@ -8,24 +8,25 @@ expose to MCP.
 
 This connector uses the existing engine 0.5.0 provider auth, JSON transport and
 owned resources. Ambiguous stores delegated customer credentials and adapts file
-uploads and exports through its provider-connection API. No engine, compiler,
+uploads and exports through its Monid connection API. No engine, compiler,
 shared schema, credential-store port or Relay changes are required.
 
 ## Provider setup
 
-Deploy Ambiguous's provider-connection API before activating the connector.
-Monid configures one ordinary Ambiguous administrator API key as
-`AMBIGUOUS_CREDENTIALS_API_KEY` (the usual `AMBIGUOUS_API_KEY` alias also
-works). Allow `provider_connections.read` and `provider_connections.write`, or
-`*`. Normal provider credential provisioning, catalog publication and
-owned-resource lifecycle support are the same requirements as other
-resource-backed connectors.
+Deploy Ambiguous's Monid connection API (`/api/monid/connections`) before
+activating the connector. Ambiguous issues Monid one platform-level connector
+secret (`mon_…`); it belongs to no Ambiguous workspace and reaches only the
+connection routes. Monid configures it as `AMBIGUOUS_CREDENTIALS_API_KEY` (the
+usual `AMBIGUOUS_API_KEY` alias also works). Ambiguous delivers it over a
+one-time secure channel and can rotate it without disconnecting customers.
+Normal provider credential provisioning, catalog publication and owned-resource
+lifecycle support are the same requirements as other resource-backed connectors.
 
-The Ambiguous deployment must configure `COWORKER_TOKEN_ENCRYPTION_KEY` and
-apply its provider-connection migrations. This is an Ambiguous-side deployment
-prerequisite, not a Monid core dependency. Synthetic connector tests do not
-prove production activation; validate both setup paths against the deployed
-adapter.
+The Ambiguous deployment must configure `COWORKER_TOKEN_ENCRYPTION_KEY` and the
+digest of Monid's secret, and apply its connection migrations. This is an
+Ambiguous-side deployment prerequisite, not a Monid core dependency. Synthetic
+connector tests do not prove production activation; validate both setup paths
+against the deployed adapter.
 
 ## Connection lifecycle
 

@@ -19,7 +19,7 @@ export default defineResource({
         verify: async ({ data, utils }) => {
             const response = await utils.http({
                 method: "GET",
-                path: "/api/provider-connections/" + data.resource.externalId,
+                path: "/api/monid/connections/" + data.resource.externalId,
             });
             if (response.status === 404) {
                 return {
@@ -35,7 +35,7 @@ export default defineResource({
         release: async ({ data, utils }) => {
             const response = await utils.http({
                 method: "DELETE",
-                path: "/api/provider-connections/" + data.resource.externalId,
+                path: "/api/monid/connections/" + data.resource.externalId,
             });
             if (response.status !== 204 && response.status !== 404) {
                 throw new Error("Ambiguous connection release failed");
@@ -45,7 +45,7 @@ export default defineResource({
         refresh: async ({ data, utils }) => {
             const response = await utils.http({
                 method: "GET",
-                path: "/api/provider-connections/" + data.resource.externalId,
+                path: "/api/monid/connections/" + data.resource.externalId,
             });
             if (response.status === 404) return { active: false };
             if (response.status !== 200) {
@@ -76,7 +76,7 @@ export default defineResource({
             read: async ({ data, utils }) => {
                 const response = await utils.http({
                     method: "GET",
-                    path: "/api/provider-connections/" +
+                    path: "/api/monid/connections/" +
                         data.resource.externalId,
                 });
                 if (response.status !== 200) {
